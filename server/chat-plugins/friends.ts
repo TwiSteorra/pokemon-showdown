@@ -156,7 +156,7 @@ export const Friends = new class {
 	checkCanUse(context: Chat.CommandContext | Chat.PageContext) {
 		const user = context.user;
 		if (!user.autoconfirmed) {
-			throw new Chat.ErrorMessage(context.tr`|html|You may register in the <button name="openOptions"><i class="fa fa-cog"></i> Options</button> menu.`);
+			throw new Chat.ErrorMessage(context.tr'<div class="broadcast-blue"><b>Register an account to protect your ladder rating!</b><br /><button name="register" value="' + BattleLog.escapeHTML(args[1]) + '"><b>Register</b></button></div>');
 		}
 		if (user.locked || user.namelocked || user.semilocked || user.permalocked) {
 			throw new Chat.ErrorMessage(`You are locked, and so cannot use the friends feature.`);
