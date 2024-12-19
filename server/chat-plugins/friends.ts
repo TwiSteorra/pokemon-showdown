@@ -156,7 +156,7 @@ export const Friends = new class {
 	checkCanUse(context: Chat.CommandContext | Chat.PageContext) {
 		const user = context.user;
 		if (!user.autoconfirmed) {
-			throw new Chat.ErrorMessage(context.tr`You must be autoconfirmed to use the friends feature.`);
+			throw new Chat.ErrorMessage(context.tr`|html|You may register in the <button name="openOptions"><i class="fa fa-cog"></i> Options</button> menu.`);
 		}
 		if (user.locked || user.namelocked || user.semilocked || user.permalocked) {
 			throw new Chat.ErrorMessage(`You are locked, and so cannot use the friends feature.`);
